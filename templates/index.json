@@ -1,50 +1,80 @@
-
 {
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
        "settings": {
-        "text": "Free Shipping On All Simulator Packages"
+        "text": "FREE SHIPPING ON ALL ORDERS IN THE CONTIGUOUS USA"
       }
     },
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "The Ultimate Indoor Golf Experience",
-        "subheading": "Bring the world's most iconic courses to your home with our state-of-the-art simulator packages. Unmatched realism, precision, and quality.",
-        "button_label": "Shop All Packages"
+        "heading": "Your Season Never Ends",
+        "subheading": "Don't let weather or daylight limit your passion for golf. Build the perfect home golf experience with expertly curated simulators, enclosures, and accessories from the world's most trusted brands.",
+        "button_label": "Explore Simulators"
       }
     },
     "featured-packages": {
       "type": "featured-collection",
       "settings": {
-        "title": "Complete Simulator Packages",
-        "description": "All-in-one solutions for the ultimate indoor golf experience. Hand-picked for performance and quality.",
-        "collection": "frontpage"
+        "title": "Complete Golf Simulator Packages",
+        "description": "All-in-one solutions featuring launch monitors, enclosures, and hitting mats. Meticulously selected for accuracy, reliability, and performance.",
+        "collection": "golf-simulators"
       }
     },
-    "ai-recommender": {
-      "type": "ai-recommender",
+    "about-snippet": {
+      "type": "image-with-text",
       "settings": {
-        "title": "AI-Powered Buying Guide",
-        "description": "Not sure where to start? Answer a few questions about your space and budget, and our AI expert will recommend the perfect simulator package for you.",
-        "product_collection": "frontpage"
+        "heading": "For the Dedicated Golfer",
+        "text": "OdySim Golf was founded on a simple principle: your passion for golf shouldn't be limited by weather or daylight. We are more than a retailer; we are your expert partner in building the perfect home golf experience.",
+        "button_label": "Read Our Story",
+        "button_link": "/pages/about"
+      }
+    },
+    "featured-brands": {
+      "type": "multicolumn",
+      "settings": {
+        "title": "Trusted by the Best in Golf",
+        "description": "We partner exclusively with industry-leading brands known for precision, reliability, and innovation."
+      },
+      "blocks": {
+        "uneekor": {
+          "type": "column",
+          "settings": {
+            "title": "Uneekor",
+            "text": "Premium ceiling-mounted launch monitors with unmatched indoor accuracy."
+          }
+        },
+        "skytrak": {
+          "type": "column", 
+          "settings": {
+            "title": "SkyTrak",
+            "text": "The most popular launch monitor for serious home golfers worldwide."
+          }
+        },
+        "carls-place": {
+          "type": "column",
+          "settings": {
+            "title": "Carl's Place",
+            "text": "The industry standard for golf simulator enclosures, screens, and hitting mats."
+          }
+        }
       }
     },
     "testimonial": {
       "type": "testimonial",
       "settings": {
-        "heading": "It Completely Transformed My Game",
-        "quote": "\"I was hesitant about the investment, but my Pro Tour Package from SimGolf has been a game-changer. The accuracy is unbelievable, and being able to play a full round at Pebble Beach after work is a dream come true. My handicap has dropped 5 strokes in three months.\"",
-        "author": "- Dr. Michael Chen, Avid Golfer"
+        "heading": "Finally, Year-Round Improvement",
+        "quote": "\"I was tired of losing my swing every winter. My Uneekor setup from OdySim Golf has been incredible. The data is spot-on, and being able to practice my short game at midnight has dropped my handicap from 12 to 8. Best investment I've made for my game.\"",
+        "author": "- Gary M., Dedicated Golfer"
       }
     },
     "featured-accessories": {
       "type": "featured-collection",
       "settings": {
-        "title": "Essential Accessories",
-        "description": "Elevate your setup with our premium range of launch monitors, hitting mats, and enclosures.",
-        "collection": "accessories"
+        "title": "Essential Components",
+        "description": "Launch monitors, enclosures, hitting mats, and projectors. Everything you need to build your perfect setup.",
+        "collection": "components"
       }
     }
   },
@@ -52,8 +82,10 @@
     "announcement-bar",
     "hero",
     "featured-packages",
-    "ai-recommender",
+    "about-snippet",
+    "featured-brands",
     "testimonial",
     "featured-accessories"
   ]
 }
+
