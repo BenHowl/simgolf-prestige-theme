@@ -1,0 +1,59 @@
+
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+       "settings": {
+        "text": "Free Shipping On All Simulator Packages"
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "The Ultimate Indoor Golf Experience",
+        "subheading": "Bring the world's most iconic courses to your home with our state-of-the-art simulator packages. Unmatched realism, precision, and quality.",
+        "button_label": "Shop All Packages"
+      }
+    },
+    "featured-packages": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Complete Simulator Packages",
+        "description": "All-in-one solutions for the ultimate indoor golf experience. Hand-picked for performance and quality.",
+        "collection": "frontpage"
+      }
+    },
+    "ai-recommender": {
+      "type": "ai-recommender",
+      "settings": {
+        "title": "AI-Powered Buying Guide",
+        "description": "Not sure where to start? Answer a few questions about your space and budget, and our AI expert will recommend the perfect simulator package for you.",
+        "product_collection": "frontpage"
+      }
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "settings": {
+        "heading": "It Completely Transformed My Game",
+        "quote": "\"I was hesitant about the investment, but my Pro Tour Package from SimGolf has been a game-changer. The accuracy is unbelievable, and being able to play a full round at Pebble Beach after work is a dream come true. My handicap has dropped 5 strokes in three months.\"",
+        "author": "- Dr. Michael Chen, Avid Golfer"
+      }
+    },
+    "featured-accessories": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Essential Accessories",
+        "description": "Elevate your setup with our premium range of launch monitors, hitting mats, and enclosures.",
+        "collection": "accessories"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "hero",
+    "featured-packages",
+    "ai-recommender",
+    "testimonial",
+    "featured-accessories"
+  ]
+}

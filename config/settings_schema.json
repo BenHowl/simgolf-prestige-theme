@@ -1,0 +1,22 @@
+
+[
+  {
+    "name": "theme_info",
+    "theme_name": "SimGolf Prestige",
+    "theme_version": "1.0.0",
+    "theme_author": "AI Studio",
+    "theme_documentation_url": "https://example.com/docs",
+    "theme_support_url": "https://example.com/support"
+  },
+  {
+    "name": "Google Gemini API",
+    "settings": [
+      {
+        "type": "text",
+        "id": "gemini_api_key",
+        "label": "Google Gemini API Key",
+        "info": "Enter your API key for the AI Recommender feature."
+      }
+    ]
+  }
+]
