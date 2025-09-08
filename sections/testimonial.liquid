@@ -1,0 +1,146 @@
+{{ 'section-testimonial.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="testimonial color-{{ section.settings.color_scheme }} gradient{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding isolate">
+    <div class="testimonial__content center">
+      {%- if section.settings.quote != blank -%}
+        <blockquote class="testimonial__quote">
+          <p class="testimonial__text h2">
+            "{{ section.settings.quote }}"
+          </p>
+        </blockquote>
+      {%- endif -%}
+      
+      {%- if section.settings.author != blank or section.settings.author_title != blank -%}
+        <div class="testimonial__author">
+          {%- if section.settings.author != blank -%}
+            <cite class="testimonial__author-name h5">
+              {{ section.settings.author }}
+            </cite>
+          {%- endif -%}
+          {%- if section.settings.author_title != blank -%}
+            <p class="testimonial__author-title caption-with-letter-spacing">
+              {{ section.settings.author_title }}
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      
+      {%- if section.settings.show_stars -%}
+        <div class="testimonial__stars">
+          {%- for i in (1..5) -%}
+            <span class="testimonial__star">★</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "default": "Add a customer testimonial to highlight your product or service.",
+      "label": "Testimonial quote"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "default": "Customer Name",
+      "label": "Author name"
+    },
+    {
+      "type": "text",
+      "id": "author_title",
+      "default": "Customer Title",
+      "label": "Author title or location"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "default": true,
+      "label": "Show star rating"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "accent-2",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial"
+    }
+  ]
+}
+{% endschema %}
