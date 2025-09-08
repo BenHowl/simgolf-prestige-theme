@@ -1,0 +1,104 @@
+/* Component: Price
+-------------------------- */
+
+.price {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.price--large {
+  font-size: 1.5rem;
+}
+
+.price--medium {
+  font-size: 1.25rem;
+}
+
+.price--small {
+  font-size: 1rem;
+}
+
+.price--on-sale {
+  color: var(--color-accent-1);
+}
+
+.price__regular {
+  display: block;
+}
+
+.price__sale {
+  display: flex;
+  align-items: center;
+}
+
+.price__compare {
+  margin-left: 0.75rem;
+  font-size: 0.875em;
+  color: var(--color-foreground-40);
+  text-decoration: line-through;
+}
+
+.price__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+}
+
+.price__badge--sale {
+  background-color: var(--color-accent-1);
+  color: var(--color-background);
+}
+
+.price__badge--soldout {
+  background-color: var(--color-foreground-40);
+  color: var(--color-background);
+}
+
+/* Premium styling for high-end brand */
+.price--premium {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.02em;
+}
+
+.price--premium.price--large {
+  font-size: 1.75rem;
+}
+
+.price--premium .price__compare {
+  font-size: 1rem;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 750px) {
+  .price--large {
+    font-size: 1.75rem;
+  }
+  
+  .price--medium {
+    font-size: 1.375rem;
+  }
+  
+  .price--premium.price--large {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .price--large {
+    font-size: 2rem;
+  }
+  
+  .price--premium.price--large {
+    font-size: 2.25rem;
+  }
+}
+

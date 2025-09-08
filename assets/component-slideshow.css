@@ -1,0 +1,151 @@
+.slideshow {
+  position: relative;
+}
+
+.slideshow__slide {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+
+.slideshow__slide.is-active {
+  display: block;
+}
+
+.slideshow__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50% );
+  z-index: 2;
+}
+
+.slideshow__controls--top {
+  top: 1rem;
+  transform: none;
+}
+
+.slider-button {
+  background: rgba(var(--color-base-background-1), 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: rgba(var(--color-base-text), 1);
+  transition: all 0.2s ease;
+}
+
+.slider-button:hover {
+  background: rgba(var(--color-base-background-1), 1);
+}
+
+.slider-button--prev {
+  left: 1rem;
+}
+
+.slider-button--next {
+  right: 1rem;
+}
+
+.slider-counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.announcement-bar__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.announcement-bar__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.announcement-bar__link:hover {
+  text-decoration: underline;
+}
+
+.utility-bar {
+  position: relative;
+  z-index: 3;
+}
+
+.utility-bar__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+}
+
+.utility-bar--bottom-border {
+  border-bottom: 0.1rem solid rgba(var(--color-base-outline-button-labels), 0.2);
+}
+
+.animate-arrow .icon-arrow {
+  transition: transform 0.2s ease;
+}
+
+.animate-arrow:hover .icon-arrow {
+  transform: translateX(0.2rem);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-arrow {
+  width: 1.4rem;
+  height: 1rem;
+}
+
+.icon-caret {
+  width: 1rem;
+  height: 0.6rem;
+}
+
+.no-js-hidden {
+  display: none;
+}
+
+.js .no-js-hidden {
+  display: block;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

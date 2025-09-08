@@ -1,0 +1,249 @@
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .header {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .header {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<header class="header color-{{ section.settings.color_scheme }} gradient">
+  <div class="header__content page-width">
+    <div class="header__grid">
+      <div class="header__logo-wrapper">
+        {%- if section.settings.logo != blank -%}
+          <a href="{{ routes.root_url }}" class="header__logo-link">
+            {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+            {{ section.settings.logo | image_url: width: section.settings.logo_width | image_tag:
+              class: 'header__logo',
+              widths: '50, 100, 150, 200, 250, 300, 400, 500',
+              height: section.settings.logo.height,
+              width: section.settings.logo.width,
+              alt: logo_alt
+            }}
+          </a>
+        {%- else -%}
+          <a href="{{ routes.root_url }}" class="header__logo-text h4">
+            {{ shop.name }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__menu list-unstyled">
+          {%- for link in section.settings.menu.links -%}
+            <li class="header__menu-item{% if link.links.size > 0 %} header__menu-item--has-dropdown{% endif %}">
+              <a href="{{ link.url }}" class="header__menu-link{% if link.current %} header__menu-link--active{% endif %}">
+                {{ link.title }}
+                {%- if link.links.size > 0 -%}
+                  {% render 'icon-caret' %}
+                {%- endif -%}
+              </a>
+
+              {%- if link.links.size > 0 -%}
+                <ul class="header__submenu list-unstyled">
+                  {%- for childlink in link.links -%}
+                    <li class="header__submenu-item">
+                      <a href="{{ childlink.url }}" class="header__submenu-link{% if childlink.current %} header__submenu-link--active{% endif %}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <div class="header__icons">
+        <a href="{{ routes.search_url }}" class="header__icon header__icon--search">
+          {% render 'icon-search' %}
+          <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
+        </a>
+
+        <a href="{{ routes.account_url }}" class="header__icon header__icon--account">
+          {% render 'icon-user' %}
+          <span class="visually-hidden">{{ 'customer.account.title' | t }}</span>
+        </a>
+
+        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart">
+          {% render 'icon-cart' %}
+          <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+          <div class="header__cart-count">
+            {%- if cart.item_count > 0 -%}
+              <span>{{ cart.item_count }}</span>
+            {%- endif -%}
+          </div>
+        </a>
+
+        <button type="button" class="header__icon header__icon--menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="header__icon-bar"></span>
+          <span class="header__icon-bar"></span>
+          <span class="header__icon-bar"></span>
+          <span class="visually-hidden">{{ 'general.navigation.menu' | t }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu__container page-width">
+      <button type="button" class="mobile-menu__close">
+        <span class="visually-hidden">{{ 'general.navigation.close_menu' | t }}</span>
+        <span class="mobile-menu__close-icon">&times;</span>
+      </button>
+
+      <ul class="mobile-menu__list list-unstyled">
+        {%- for link in section.settings.menu.links -%}
+          <li class="mobile-menu__item{% if link.links.size > 0 %} mobile-menu__item--has-submenu{% endif %}">
+            <a href="{{ link.url }}" class="mobile-menu__link{% if link.current %} mobile-menu__link--active{% endif %}">
+              {{ link.title }}
+            </a>
+
+            {%- if link.links.size > 0 -%}
+              <button type="button" class="mobile-menu__submenu-toggle" aria-expanded="false">
+                {% render 'icon-caret' %}
+              </button>
+
+              <ul class="mobile-menu__submenu list-unstyled">
+                {%- for childlink in link.links -%}
+                  <li class="mobile-menu__submenu-item">
+                    <a href="{{ childlink.url }}" class="mobile-menu__submenu-link{% if childlink.current %} mobile-menu__submenu-link--active{% endif %}">
+                      {{ childlink.title }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.header__icon--menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu__close');
+    const submenuToggles = document.querySelectorAll('.mobile-menu__submenu-toggle');
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        const expanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+        mobileMenuToggle.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('mobile-menu--active');
+        document.body.classList.toggle('no-scroll');
+      });
+    }
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('mobile-menu--active');
+        document.body.classList.remove('no-scroll');
+      });
+    }
+
+    submenuToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        toggle.parentElement.classList.toggle('mobile-menu__item--submenu-open');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "default": 140,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 20
+    }
+  ]
+}
+{% endschema %}
+
+

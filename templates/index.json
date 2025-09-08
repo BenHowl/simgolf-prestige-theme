@@ -2,90 +2,170 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-       "settings": {
-        "text": "FREE SHIPPING ON ALL ORDERS IN THE CONTIGUOUS USA"
+      "settings": {
+        "text": "FREE SHIPPING ON ALL ORDERS IN THE CONTIGUOUS USA",
+        "link": "/policies/shipping-policy",
+        "color_scheme": "accent-1"
       }
     },
     "hero": {
       "type": "hero",
       "settings": {
         "heading": "Your Season Never Ends",
-        "subheading": "Don't let weather or daylight limit your passion for golf. Build the perfect home golf experience with expertly curated simulators, enclosures, and accessories from the world's most trusted brands.",
-        "button_label": "Explore Simulators"
+        "subheading": "Transform any space into your personal golf sanctuary. Practice, improve, and play year-round with the world's most advanced golf simulators and training solutions.",
+        "button_label": "Shop All Packages",
+        "button_link": "/collections/golf-simulators",
+        "color_scheme": "accent-1",
+        "height": "large"
       }
     },
-    "featured-packages": {
+    "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Complete Golf Simulator Packages",
-        "description": "All-in-one solutions featuring launch monitors, enclosures, and hitting mats. Meticulously selected for accuracy, reliability, and performance.",
-        "collection": "golf-simulators"
+        "title": "Complete Simulator Packages",
+        "heading_size": "h1",
+        "description": "<p>Everything you need for the ultimate indoor golf experience, carefully curated and ready to install.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "golf-simulators",
+        "products_to_show": 4,
+        "columns_desktop": 2,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "about-snippet": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "For the Dedicated Golfer",
-        "text": "OdySim Golf was founded on a simple principle: your passion for golf shouldn't be limited by weather or daylight. We are more than a retailer; we are your expert partner in building the perfect home golf experience.",
-        "button_label": "Read Our Story",
-        "button_link": "/pages/about"
-      }
-    },
-    "featured-brands": {
+    "multicolumn": {
       "type": "multicolumn",
-      "settings": {
-        "title": "Trusted by the Best in Golf",
-        "description": "We partner exclusively with industry-leading brands known for precision, reliability, and innovation."
-      },
       "blocks": {
-        "uneekor": {
+        "column1": {
           "type": "column",
           "settings": {
             "title": "Uneekor",
-            "text": "Premium ceiling-mounted launch monitors with unmatched indoor accuracy."
+            "text": "<p>The gold standard in launch monitor technology. Uneekor's precision and reliability make it the choice of professionals worldwide.</p>",
+            "link_label": "View Uneekor Products",
+            "link": "/collections/uneekor"
           }
         },
-        "skytrak": {
-          "type": "column", 
+        "column2": {
+          "type": "column",
           "settings": {
             "title": "SkyTrak",
-            "text": "The most popular launch monitor for serious home golfers worldwide."
+            "text": "<p>Affordable excellence that doesn't compromise on accuracy. Perfect for serious golfers who want professional-grade data at home.</p>",
+            "link_label": "View SkyTrak Products",
+            "link": "/collections/skytrak"
           }
         },
-        "carls-place": {
+        "column3": {
           "type": "column",
           "settings": {
             "title": "Carl's Place",
-            "text": "The industry standard for golf simulator enclosures, screens, and hitting mats."
+            "text": "<p>Premium enclosures and accessories that complete your setup. Transform any room into a professional golf environment.</p>",
+            "link_label": "View Enclosures",
+            "link": "/collections/enclosures"
           }
         }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
+      "settings": {
+        "title": "Trusted by Professionals",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "caption": "Our Story",
+        "heading": "For the Dedicated Golfer",
+        "text": "<p>OdySim Golf was founded on a simple principle: your passion for golf shouldn't be limited by weather or daylight. We are more than a retailer; we are your expert partner in building the perfect home golf experience.</p><p>We meticulously curate a collection of only the most accurate and reliable simulators, enclosures, and accessories from world-class brands. Every product we offer has been tested and proven by professionals who demand excellence.</p>",
+        "button_label": "Learn More About Us",
+        "button_link": "/pages/about",
+        "button_style_secondary": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "testimonial": {
       "type": "testimonial",
       "settings": {
-        "heading": "Finally, Year-Round Improvement",
-        "quote": "\"I was tired of losing my swing every winter. My Uneekor setup from OdySim Golf has been incredible. The data is spot-on, and being able to practice my short game at midnight has dropped my handicap from 12 to 8. Best investment I've made for my game.\"",
-        "author": "- Gary M., Dedicated Golfer"
+        "quote": "I was skeptical about indoor golf until I tried the Uneekor system at OdySim Golf. The accuracy is incredible - it's actually helped me identify and fix swing flaws I never knew I had. Now I practice year-round and my handicap has dropped 4 strokes.",
+        "author": "Gary M.",
+        "author_title": "12 Handicap, Phoenix AZ",
+        "color_scheme": "accent-2",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "featured-accessories": {
+    "featured-collection-2": {
       "type": "featured-collection",
       "settings": {
         "title": "Essential Components",
-        "description": "Launch monitors, enclosures, hitting mats, and projectors. Everything you need to build your perfect setup.",
-        "collection": "components"
+        "heading_size": "h1",
+        "description": "<p>Individual components to build your custom setup or upgrade your existing system.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "components",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "announcement-bar",
     "hero",
-    "featured-packages",
-    "about-snippet",
-    "featured-brands",
+    "featured-collection",
+    "multicolumn",
+    "image-with-text",
     "testimonial",
-    "featured-accessories"
+    "featured-collection-2"
   ]
 }
-

@@ -1,0 +1,260 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.06rem;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  color: rgba(var(--color-base-text), 1);
+  background-color: rgb(var(--color-base-background-1));
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+.gradient {
+  background: var(--gradient-base-background-1);
+}
+
+.page-width {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 5rem;
+  }
+}
+
+.focus-none {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+}
+
+.skip-to-content-link:focus {
+  z-index: 9999;
+  position: inherit;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  word-break: break-word;
+  color: rgba(var(--color-base-text), 1);
+}
+
+h1 {
+  font-size: calc(var(--font-heading-scale) * 3rem);
+}
+
+h2 {
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
+}
+
+h3 {
+  font-size: calc(var(--font-heading-scale) * 2rem);
+}
+
+h4 {
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+}
+
+h5 {
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
+
+h6 {
+  font-size: calc(var(--font-heading-scale) * 1.4rem);
+}
+
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: calc(var(--font-heading-scale) * 4rem);
+  }
+  
+  h2 {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+  }
+}
+
+/* Buttons */
+.button {
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  background-color: rgba(var(--color-base-accent-1), 1);
+  color: rgba(var(--color-base-solid-button-labels), 1);
+  border-radius: var(--buttons-radius);
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  line-height: calc(1 + 0.2 / var(--font-body-scale));
+  text-transform: uppercase;
+  font-weight: var(--font-body-weight-bold);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgba(var(--color-base-accent-1), 0.8);
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: rgba(var(--color-base-outline-button-labels), 1);
+  border: 1px solid rgba(var(--color-base-outline-button-labels), 1);
+}
+
+.button--secondary:hover {
+  background-color: rgba(var(--color-base-outline-button-labels), 1);
+  color: rgba(var(--color-base-background-1), 1);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--grid-desktop-horizontal-spacing);
+}
+
+.grid--1-col {
+  grid-template-columns: 1fr;
+}
+
+.grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 749px) {
+  .grid {
+    gap: var(--grid-mobile-horizontal-spacing);
+  }
+  
+  .grid--2-col-tablet-down {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid--1-col-tablet-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-sections-mobile) 0;
+}
+
+@media screen and (min-width: 750px) {
+  .section {
+    padding: var(--spacing-sections-desktop) 0;
+  }
+}
+
+/* Color schemes */
+.color-background-1 {
+  color: rgba(var(--color-base-text), 1);
+  background-color: rgb(var(--color-base-background-1));
+}
+
+.color-background-2 {
+  color: rgba(var(--color-base-text), 1);
+  background-color: rgb(var(--color-base-background-2));
+}
+
+.color-accent-1 {
+  color: rgba(var(--color-base-solid-button-labels), 1);
+  background-color: rgb(var(--color-base-accent-1));
+}
+
+.color-accent-2 {
+  color: rgba(var(--color-base-solid-button-labels), 1);
+  background-color: rgb(var(--color-base-accent-2));
+}
+
+/* Utilities */
+.center {
+  text-align: center;
+}
+
+.isolate {
+  isolation: isolate;
+}
+
+.content-container {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .content-container {
+    padding: 3rem;
+  }
+}
+
+/* Rich text editor styles */
+.rte {
+  margin-bottom: 1.5rem;
+}
+
+.rte p {
+  margin-bottom: 1rem;
+}
+
+.rte p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline rich text */
+.inline-richtext {
+  margin: 0;
+}
