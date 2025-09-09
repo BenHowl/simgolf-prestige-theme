@@ -105,6 +105,7 @@
       "description": "Description",
       "on_sale": "Sale",
       "product_variants": "Product variants",
+      "value_unavailable": "This option is not available with [value]",
       "quantity": {
         "label": "Quantity",
         "input_label": "Quantity for {{ product }}",
@@ -255,6 +256,32 @@
     "footer": {
       "payment": "Payment methods"
     },
+    "image-with-text": {
+      "name": "Image with text",
+      "settings": {
+        "image": "Image",
+        "image_width": "Image width",
+        "width": {
+          "50": "50%",
+          "60": "60%",
+          "70": "70%"
+        },
+        "text_alignment": "Text alignment",
+        "alignment": {
+          "left": "Left",
+          "center": "Center",
+          "right": "Right"
+        },
+        "heading": "Heading",
+        "subheading": "Subheading",
+        "text": "Text",
+        "button_label": "Button label",
+        "button_link": "Button link"
+      },
+      "presets": {
+        "name": "Image with text"
+      }
+    },
     "featured_blog": {
       "view_all": "View all",
       "onboarding_title": "Blog post",
@@ -394,4 +421,3 @@
     }
   }
 }
-

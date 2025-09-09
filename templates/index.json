@@ -1,13 +1,5 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "FREE SHIPPING ON ALL ORDERS IN THE CONTIGUOUS USA",
-        "link": "/policies/shipping-policy",
-        "color_scheme": "accent-1"
-      }
-    },
     "hero": {
       "type": "hero",
       "settings": {
@@ -160,7 +152,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "hero",
     "featured-collection",
     "multicolumn",
