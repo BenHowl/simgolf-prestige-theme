@@ -10,7 +10,7 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
+      "type": "hero-banner",
       "settings": {
         "color_scheme": "accent-1"
       }
