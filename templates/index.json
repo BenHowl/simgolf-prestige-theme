@@ -1,22 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "FREE SHIPPING ON ALL ORDERS IN THE CONTIGUOUS USA",
-        "link": "/policies/shipping-policy",
-        "color_scheme": "accent-1"
-      }
-    },
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "Your Season Never Ends",
-        "subheading": "Transform any space into your personal golf sanctuary. Practice, improve, and play year-round with the world's most advanced golf simulators and training solutions.",
-        "button_label": "Shop All Packages",
-        "button_link": "/collections/golf-simulators",
-        "color_scheme": "accent-1",
-        "height": "large"
+        "color_scheme": "accent-1"
       }
     },
     "featured-collection": {
@@ -160,7 +156,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "hero",
     "featured-collection",
     "multicolumn",
