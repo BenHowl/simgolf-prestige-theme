@@ -1,7 +1,7 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
+      "type": "hero-banner",
       "settings": {
         "heading": "Your Season Never Ends",
         "subheading": "Transform any space into your personal golf sanctuary. Practice, improve, and play year-round with the world's most advanced golf simulators and training solutions.",
