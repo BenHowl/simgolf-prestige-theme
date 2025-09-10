@@ -1,0 +1,67 @@
+<div class="announcement-bar color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <p class="announcement-bar__message">
+      {{ section.settings.text | escape }}
+      {% if section.settings.link != blank %}
+        <a href="{{ section.settings.link }}" class="announcement-bar__link">{{ section.settings.link_text | escape }}</a>
+      {% endif %}
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "tag": "section",
+  "class": "announcement-bar-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "default": "Free shipping on all simulator packages",
+      "label": "Announcement text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Announcement link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Learn more"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Primary accent"
+        },
+        {
+          "value": "accent-2",
+          "label": "Secondary accent"
+        },
+        {
+          "value": "accent-3",
+          "label": "Gold accent"
+        },
+        {
+          "value": "background-1",
+          "label": "Background"
+        }
+      ],
+      "default": "accent-1",
+      "label": "Color scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
+
