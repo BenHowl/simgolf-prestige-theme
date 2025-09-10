@@ -1,12 +1,16 @@
-
 [
   {
-    "name": "theme_info",
-    "theme_name": "SimGolf Prestige",
-    "theme_version": "1.0.0",
-    "theme_author": "AI Studio",
-    "theme_documentation_url": "https://example.com/docs",
-    "theme_support_url": "https://example.com/support"
+    "name": "Theme Information",
+    "settings": [
+      {
+        "type": "header",
+        "content": "OdySim Golf"
+      },
+      {
+        "type": "paragraph",
+        "content": "Premium golf simulator e-commerce theme"
+      }
+    ]
   },
   {
     "name": "Google Gemini API",
@@ -18,5 +22,227 @@
         "info": "Enter your API key for the AI Recommender feature."
       }
     ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Color schemes"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Color scheme",
+        "options": [
+          {
+            "value": "scheme1",
+            "label": "OdySim Primary"
+          },
+          {
+            "value": "scheme2",
+            "label": "OdySim Accent"
+          }
+        ],
+        "default": "scheme1"
+      }
+    ]
+  },
+  {
+    "name": "Colors: OdySim Primary",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_background",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "label": "Text",
+        "default": "#1a1a1a"
+      },
+      {
+        "type": "color",
+        "id": "colors_button",
+        "label": "Button",
+        "default": "#0f4c81"
+      },
+      {
+        "type": "color",
+        "id": "colors_button_text",
+        "label": "Button text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent",
+        "label": "Accent",
+        "default": "#d4af37"
+      }
+    ]
+  },
+  {
+    "name": "Colors: OdySim Accent",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_accent_background",
+        "label": "Background",
+        "default": "#0f4c81"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_button",
+        "label": "Button",
+        "default": "#d4af37"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_button_text",
+        "label": "Button text",
+        "default": "#1a1a1a"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Font",
+        "default": "playfair_display_n7"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Size scale",
+        "default": 120
+      },
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Font",
+        "default": "montserrat_n4"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 100,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Size scale",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "select",
+        "id": "page_width",
+        "label": "Page width",
+        "options": [
+          {
+            "value": "1200",
+            "label": "1200px"
+          },
+          {
+            "value": "1400",
+            "label": "1400px"
+          },
+          {
+            "value": "1600",
+            "label": "1600px"
+          }
+        ],
+        "default": "1400"
+      },
+      {
+        "type": "checkbox",
+        "id": "spacing_sections",
+        "label": "Add spacing between sections",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https://facebook.com/youraccount"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https://instagram.com/youraccount"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "info": "https://youtube.com/youraccount"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "info": "https://tiktok.com/@youraccount"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "info": "https://twitter.com/youraccount"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn",
+        "info": "https://linkedin.com/in/youraccount"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
   }
 ]
+
